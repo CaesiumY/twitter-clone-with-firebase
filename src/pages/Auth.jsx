@@ -9,7 +9,6 @@ const Auth = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-
     try {
       let data;
       if (newAccount) {
@@ -28,15 +27,12 @@ const Auth = () => {
 
   const onSocialLogin = async (e) => {
     const { name } = e.target;
-
     let provider;
-
     if (name === "google") {
       provider = new firebaseInstance.auth.GoogleAuthProvider();
     } else {
       provider = new firebaseInstance.auth.GithubAuthProvider();
     }
-
     const data = await authService.signInWithPopup(provider);
     console.log("onSocialLogin -> data", data);
   };
