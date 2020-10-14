@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import AppRouter from "route";
-import { auth } from "firebaseConfig";
+import { authService } from "firebaseConfig";
 
 function App() {
-  const [isAuth, setIsAuth] = useState(auth.currentUser);
-  console.log(isAuth);
+  const [isAuth, setIsAuth] = useState(authService.currentUser);
+  console.log("App -> isAuth", isAuth);
   return (
     <>
       <AppRouter isAuth={isAuth}></AppRouter>
