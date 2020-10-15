@@ -1,3 +1,4 @@
+import Tweet from "components/Tweet";
 import React, { useEffect, useState } from "react";
 import { dbService } from "../firebaseConfig";
 
@@ -46,10 +47,12 @@ const Home = ({ userObj }) => {
         <input type="submit" value="Tweet" />
       </form>
 
-      {tweets.map((item) => (
-        <div key={item.id}>
-          <h4>{item.text}</h4>
-        </div>
+      {tweets.map((tweetObj) => (
+        <Tweet
+          key={tweetObj.id}
+          tweetObj={tweetObj}
+          isOwner={tweetObj.uid === userObj.uid}
+        ></Tweet>
       ))}
     </>
   );
