@@ -15,34 +15,33 @@ const AppRouter = ({ isAuth }) => {
   return (
     <Router>
       {isAuth && <Navigation></Navigation>}
-      <Switch>
-        {isAuth ? (
-          <>
-            <Route exact path="/">
-              <Home></Home>
-            </Route>
-            <Route exact path="/profile">
-              <Profile></Profile>
-            </Route>
 
-            <Route exact path="*">
-              <NotFound></NotFound>
-            </Route>
-            <Redirect from="*" to="/"></Redirect>
-          </>
-        ) : (
-          <>
-            <Route exact path="/">
-              <Auth></Auth>
-            </Route>
+      {isAuth ? (
+        <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route exact path="/profile">
+            <Profile></Profile>
+          </Route>
 
-            <Route exact path="*">
-              <NotFound></NotFound>
-            </Route>
-            <Redirect from="*" to="/"></Redirect>
-          </>
-        )}
-      </Switch>
+          <Route path="*">
+            <NotFound></NotFound>
+          </Route>
+          <Redirect from="*" to="/"></Redirect>
+        </Switch>
+      ) : (
+        <Switch>
+          <Route exact path="/">
+            <Auth></Auth>
+          </Route>
+
+          <Route path="*">
+            <NotFound></NotFound>
+          </Route>
+          <Redirect from="*" to="/"></Redirect>
+        </Switch>
+      )}
     </Router>
   );
 };
