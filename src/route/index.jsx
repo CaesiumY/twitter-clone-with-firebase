@@ -11,7 +11,7 @@ import {
 import Auth from "../pages/Auth";
 import Home from "../pages/Home";
 
-const AppRouter = ({ isAuth }) => {
+const AppRouter = ({ isAuth, userObj }) => {
   return (
     <Router>
       {isAuth && <Navigation></Navigation>}
@@ -19,7 +19,7 @@ const AppRouter = ({ isAuth }) => {
       {isAuth ? (
         <Switch>
           <Route exact path="/">
-            <Home></Home>
+            <Home userObj={userObj}></Home>
           </Route>
           <Route exact path="/profile">
             <Profile></Profile>
