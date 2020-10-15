@@ -43,6 +43,7 @@ const Home = ({ userObj }) => {
           placeholder="What's on your mind?"
           value={tweet}
           onChange={onChange}
+          maxLength={120}
         />
         <input type="submit" value="Tweet" />
       </form>
