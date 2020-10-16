@@ -1,4 +1,4 @@
-import { dbService } from "firebaseConfig";
+import { dbService, storageService } from "firebaseConfig";
 import React, { useState } from "react";
 
 const Tweet = ({ tweetObj, isOwner }) => {
@@ -12,6 +12,7 @@ const Tweet = ({ tweetObj, isOwner }) => {
     if (!confirm) return;
 
     await dbService.doc(`tweets/${tweetObj.id}`).delete();
+    await storageService.refFromURL(tweetObj.attachmentUrl).delete();
   };
 
   const onChange = (e) => {
