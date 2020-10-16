@@ -5,6 +5,7 @@ import { dbService } from "../firebaseConfig";
 const Home = ({ userObj }) => {
   const [tweet, setTweet] = useState("");
   const [tweets, setTweets] = useState([]);
+  const [attachment, setAttachment] = useState();
 
   useEffect(() => {
     dbService.collection("tweets").onSnapshot((snapshots) => {
@@ -40,13 +41,19 @@ const Home = ({ userObj }) => {
 
     const myFile = files[0];
 
+    if (!myFile) return;
+
     const reader = new FileReader();
     reader.onloadend = (finishedEvent) => {
-      console.log(finishedEvent.target);
+      const { result } = finishedEvent.target;
+
+      setAttachment(result);
     };
 
     reader.readAsDataURL(myFile);
   };
+
+  const onClearAttachment = () => setAttachment(null);
 
   return (
     <>
@@ -67,6 +74,13 @@ const Home = ({ userObj }) => {
         />
 
         <input type="submit" value="Tweet" />
+
+        {attachment && (
+          <div>
+            <img src={attachment} alt="tweet_image" width={50} height={50} />
+            <button onClick={onClearAttachment}>clear</button>
+          </div>
+        )}
       </form>
 
       {tweets.map((tweetObj) => (
