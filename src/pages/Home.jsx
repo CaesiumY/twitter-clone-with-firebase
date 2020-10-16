@@ -1,6 +1,7 @@
-import Tweet from "components/Tweet";
 import React, { useEffect, useState } from "react";
-import { dbService } from "../firebaseConfig";
+import { v4 as uuid } from "uuid";
+import { dbService, storageService } from "../firebaseConfig";
+import Tweet from "components/Tweet";
 
 const Home = ({ userObj }) => {
   const [tweet, setTweet] = useState("");
@@ -27,11 +28,16 @@ const Home = ({ userObj }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    await dbService.collection("tweets").add({
-      text: tweet,
-      createdAt: Date.now(),
-      uid: userObj.uid,
-    });
+    const ref = storageService.ref().child(`${userObj.uid}/${uuid()}`);
+    const response = await ref.putString(attachment, "data_url");
+
+    console.log(response);
+
+    // await dbService.collection("tweets").add({
+    //   text: tweet,
+    //   createdAt: Date.now(),
+    //   uid: userObj.uid,
+    // });
 
     setTweet("");
   };
