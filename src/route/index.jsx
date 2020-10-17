@@ -22,7 +22,7 @@ const AppRouter = ({ isAuth, userObj }) => {
             <Home userObj={userObj}></Home>
           </Route>
           <Route exact path="/profile">
-            <Profile></Profile>
+            <Profile userObj={userObj}></Profile>
           </Route>
 
           <Route path="*">
