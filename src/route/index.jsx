@@ -11,7 +11,7 @@ import {
 import Auth from "../pages/Auth";
 import Home from "../pages/Home";
 
-const AppRouter = ({ isAuth, userObj }) => {
+const AppRouter = ({ isAuth, userObj, onRefreshUser }) => {
   return (
     <Router>
       {isAuth && <Navigation></Navigation>}
@@ -22,7 +22,7 @@ const AppRouter = ({ isAuth, userObj }) => {
             <Home userObj={userObj}></Home>
           </Route>
           <Route exact path="/profile">
-            <Profile userObj={userObj}></Profile>
+            <Profile userObj={userObj} onRefreshUser={onRefreshUser}></Profile>
           </Route>
 
           <Route path="*">

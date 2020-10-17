@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { authService, dbService } from "firebaseConfig";
 
-const Profile = ({ userObj }) => {
+const Profile = ({ userObj, onRefreshUser }) => {
   const [newDisplayName, setNewDisplayName] = useState(
     userObj.displayName || userObj.email.split("@")[0]
   );
@@ -39,12 +39,14 @@ const Profile = ({ userObj }) => {
       await userObj.updateProfile({
         displayName: newDisplayName,
       });
+
+      onRefreshUser();
     }
   };
 
   return (
     <>
-      <p>Profile</p>
+      <p>{userObj.displayName || userObj.email.split("@")[0]}'s Profile</p>
       <form onSubmit={onSubmit}>
         <input type="text" value={newDisplayName} onChange={onChange} />
         <input type="submit" value="Update Profile" />
