@@ -17,17 +17,17 @@ const AppRouter = ({ isAuth, userObj, onRefreshUser }) => {
       {isAuth && <Navigation userObj={userObj}></Navigation>}
 
       {isAuth ? (
-        <Switch>
-          <div
-            style={{
-              maxWidth: 890,
-              width: "100%",
-              margin: "0 auto",
-              marginTop: 80,
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
+        <div
+          style={{
+            maxWidth: 890,
+            width: "100%",
+            margin: "0 auto",
+            marginTop: 80,
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Switch>
             <Route exact path="/">
               <Home userObj={userObj}></Home>
             </Route>
@@ -37,12 +37,12 @@ const AppRouter = ({ isAuth, userObj, onRefreshUser }) => {
                 onRefreshUser={onRefreshUser}
               ></Profile>
             </Route>
-          </div>
-          <Route path="*">
-            <NotFound></NotFound>
-          </Route>
-          <Redirect from="*" to="/"></Redirect>
-        </Switch>
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
+            <Redirect from="*" to="/"></Redirect>
+          </Switch>
+        </div>
       ) : (
         <Switch>
           <Route exact path="/">
