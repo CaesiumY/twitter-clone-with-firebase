@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { authService, dbService } from "firebaseConfig";
+import Tweet from "components/Tweet";
 
 const Profile = ({ userObj, onRefreshUser }) => {
+  const [myTweets, setMyTweets] = useState([]);
   const [newDisplayName, setNewDisplayName] = useState(
     userObj.displayName || userObj.email.split("@")[0]
   );
@@ -14,13 +16,20 @@ const Profile = ({ userObj, onRefreshUser }) => {
   };
 
   const getMyTweets = async () => {
-    const myTweets = await dbService
+    const tweets = await dbService
       .collection("tweets")
       .where("uid", "==", userObj.uid)
       .orderBy("createdAt")
       .get();
 
-    console.log(myTweets.docs.map((doc) => doc.data()));
+    const tweetData = tweets.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+
+    console.log(tweetData);
+
+    setMyTweets(tweetData);
   };
 
   useEffect(() => {
@@ -52,6 +61,14 @@ const Profile = ({ userObj, onRefreshUser }) => {
         <input type="submit" value="Update Profile" />
       </form>
       <button onClick={onSignOut}>Log Out</button>
+
+      {myTweets.map((tweet) => (
+        <Tweet
+          key={tweet.id}
+          tweetObj={tweet}
+          isOwner={tweet.uid === userObj.uid}
+        ></Tweet>
+      ))}
     </>
   );
 };

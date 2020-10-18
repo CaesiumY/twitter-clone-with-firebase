@@ -14,6 +14,7 @@ function App() {
         setUserObj(getCompressedUser(user));
       } else {
         setIsAuth(false);
+        setUserObj(null);
       }
       setIsinit(true);
     });
