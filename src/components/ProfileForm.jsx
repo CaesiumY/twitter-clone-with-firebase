@@ -32,12 +32,27 @@ const ProfileForm = ({ userObj, onRefreshUser }) => {
   };
   return (
     <>
-      <p>{userObj.displayName || userObj.email.split("@")[0]}'s Profile</p>
-      <form onSubmit={onSubmit}>
-        <input type="text" value={newDisplayName} onChange={onChange} />
-        <input type="submit" value="Update Profile" />
+      <p className="profileName">
+        {userObj.displayName || userObj.email.split("@")[0]}'s Profile
+      </p>
+      <form onSubmit={onSubmit} className="profileForm">
+        <input
+          type="text"
+          value={newDisplayName}
+          onChange={onChange}
+          autoFocus
+          className="formInput"
+        />
+        <input
+          type="submit"
+          value="Update Profile"
+          className="formBtn"
+          style={{ marginTop: 10 }}
+        />
       </form>
-      <button onClick={onSignOut}>Log Out</button>
+      <span onClick={onSignOut} className="formBtn cancelBtn logOut">
+        Log Out
+      </span>
     </>
   );
 };

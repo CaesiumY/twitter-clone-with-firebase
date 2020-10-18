@@ -1,5 +1,7 @@
 import React from "react";
 import { authService, firebaseInstance } from "firebaseConfig";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
 
 const SocialLogin = ({ provider }) => {
   const onSocialLogin = async (e) => {
@@ -22,8 +24,10 @@ const SocialLogin = ({ provider }) => {
   };
 
   return (
-    <button name={provider} onClick={onSocialLogin}>
-      Continue with {provider}
+    <button className="authBtn" name={provider} onClick={onSocialLogin}>
+      Continue with{" "}
+      <span style={{ textTransform: "capitalize" }}>{provider}</span>
+      <FontAwesomeIcon icon={provider === "google" ? faGoogle : faGithub} />
     </button>
   );
 };

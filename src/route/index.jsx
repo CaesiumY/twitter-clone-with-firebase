@@ -14,17 +14,30 @@ import Home from "../pages/Home";
 const AppRouter = ({ isAuth, userObj, onRefreshUser }) => {
   return (
     <Router>
-      {isAuth && <Navigation></Navigation>}
+      {isAuth && <Navigation userObj={userObj}></Navigation>}
 
       {isAuth ? (
         <Switch>
-          <Route exact path="/">
-            <Home userObj={userObj}></Home>
-          </Route>
-          <Route exact path="/profile">
-            <Profile userObj={userObj} onRefreshUser={onRefreshUser}></Profile>
-          </Route>
-
+          <div
+            style={{
+              maxWidth: 890,
+              width: "100%",
+              margin: "0 auto",
+              marginTop: 80,
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <Route exact path="/">
+              <Home userObj={userObj}></Home>
+            </Route>
+            <Route exact path="/profile">
+              <Profile
+                userObj={userObj}
+                onRefreshUser={onRefreshUser}
+              ></Profile>
+            </Route>
+          </div>
           <Route path="*">
             <NotFound></NotFound>
           </Route>

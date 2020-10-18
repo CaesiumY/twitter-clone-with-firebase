@@ -26,7 +26,7 @@ const Profile = ({ userObj, onRefreshUser }) => {
   }, [userObj]);
 
   return (
-    <>
+    <div className="container">
       <ProfileForm
         userObj={userObj}
         onRefreshUser={onRefreshUser}
@@ -39,7 +39,7 @@ const Profile = ({ userObj, onRefreshUser }) => {
           isOwner={tweet.uid === userObj.uid}
         ></Tweet>
       ))}
-    </>
+    </div>
   );
 };
 
