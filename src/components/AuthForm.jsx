@@ -59,7 +59,9 @@ const AuthForm = () => {
           onChange={toggleNewAccount}
           className="authSwitch"
         />
-        <label htmlFor="isNewAccount">Already have Account?</label>
+        <label htmlFor="isNewAccount" className="authSwitch__label">
+          Already have Account?
+        </label>
         {error && <span className="authError">{error}</span>}
       </form>
     </>

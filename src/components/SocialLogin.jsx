@@ -26,7 +26,7 @@ const SocialLogin = ({ provider }) => {
   return (
     <button className="authBtn" name={provider} onClick={onSocialLogin}>
       Continue with{" "}
-      <span style={{ textTransform: "capitalize" }}>{provider}</span>
+      <span style={{ textTransform: "capitalize" }}>{provider} </span>
       <FontAwesomeIcon icon={provider === "google" ? faGoogle : faGithub} />
     </button>
   );

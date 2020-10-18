@@ -10,7 +10,7 @@ const Auth = () => {
       <FontAwesomeIcon
         icon={faTwitter}
         color={"#04aaff"}
-        size="3x"
+        size="5x"
         style={{ marginBottom: 30 }}
       />
       <AuthForm></AuthForm>
