@@ -11,7 +11,7 @@ const Profile = ({ userObj, onRefreshUser }) => {
       const tweets = await dbService
         .collection("tweets")
         .where("uid", "==", userObj.uid)
-        .orderBy("createdAt")
+        .orderBy("createdAt", "desc")
         .get();
 
       const tweetData = tweets.docs.map((doc) => ({
@@ -32,6 +32,7 @@ const Profile = ({ userObj, onRefreshUser }) => {
         onRefreshUser={onRefreshUser}
       ></ProfileForm>
 
+      <p className="profile__myTweets">My Tweets</p>
       {myTweets.map((tweet) => (
         <Tweet
           key={tweet.id}

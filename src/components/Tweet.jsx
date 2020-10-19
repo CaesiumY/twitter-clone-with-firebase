@@ -61,15 +61,17 @@ const Tweet = ({ tweetObj, isOwner }) => {
         <>
           <h4>{tweetObj.text}</h4>
           {tweetObj.attachmentUrl && (
-            <img src={tweetObj.attachmentUrl} alt="tweetImage" />
+            <a href={tweetObj.attachmentUrl} target="__blank">
+              <img src={tweetObj.attachmentUrl} alt="tweetImage" />
+            </a>
           )}
           {isOwner && (
             <div className="tweet__actions">
               <span onClick={toggleIsEdit}>
-                <FontAwesomeIcon icon={faTrash} />
+                <FontAwesomeIcon icon={faPencilAlt} />
               </span>
               <span onClick={onDeleteTweet}>
-                <FontAwesomeIcon icon={faPencilAlt} />
+                <FontAwesomeIcon icon={faTrash} />
               </span>
             </div>
           )}

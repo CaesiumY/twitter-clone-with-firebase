@@ -68,9 +68,15 @@ form {
 .cancelBtn {
   cursor: pointer;
   background-color: tomato;
+  border: none;
 }
 
 /* Profile Page */
+
+.profileName {
+  font-size: 1rem;
+  margin: 10px;
+}
 
 .profileForm {
   border-bottom: 1px solid rgba(255, 255, 255, 0.9);
@@ -81,7 +87,13 @@ form {
 }
 
 .logOut {
-  margin-top: 50px;
+  margin: 30px 0;
+}
+
+.profile__myTweets {
+  font-size: 1rem;
+  margin: 15px;
+  text-align: center;
 }
 
 /* Nwitter tweet */
@@ -197,6 +209,11 @@ form {
   height: 50px;
   margin-top: 10px;
   z-index: 1;
+  transition: all 0.3s;
+}
+
+.tweet img:hover {
+  transform: scale(2);
 }
 
 .tweet__actions {
