@@ -6,8 +6,8 @@
 
 input {
   all: unset;
-  box-sizing: border-box;
   appearance: none;
+  box-sizing: border-box;
 }
 
 body {
@@ -52,6 +52,7 @@ form {
   text-align: center;
   background-color: white;
   color: black;
+  box-sizing: border-box;
 }
 
 .formBtn {
@@ -63,6 +64,7 @@ form {
   border-radius: 20px;
   background-color: #04aaff;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .cancelBtn {
@@ -132,12 +134,12 @@ form {
   background-color: #04aaff;
   height: 40px;
   width: 40px;
-  padding: 10px 0px;
   text-align: center;
   border-radius: 20px;
   color: white;
   font-size: 1rem;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .tweetInput__label {
