@@ -9,31 +9,13 @@ const Navigation = ({ userObj }) => {
     <nav>
       <ul style={{ display: "flex", justifyContent: "center", marginTop: 50 }}>
         <li>
-          <Link
-            to="/"
-            style={{
-              marginRight: 10,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              fontSize: 12,
-            }}
-          >
+          <Link to="/" className="navLink__text">
             <FontAwesomeIcon icon={faTwitter} color={"#04aaff"} size="2x" />
             <span style={{ marginTop: 10 }}>Home</span>
           </Link>
         </li>
         <li>
-          <Link
-            to="/profile"
-            style={{
-              marginLeft: 10,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              fontSize: 12,
-            }}
-          >
+          <Link to="/profile" className="navLink__text">
             <FontAwesomeIcon icon={faUserAlt} color={"#04aaff"} size="2x" />
             <span style={{ marginTop: 10 }}>Profile</span>
           </Link>

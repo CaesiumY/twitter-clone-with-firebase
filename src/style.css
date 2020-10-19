@@ -292,3 +292,13 @@ form {
   text-decoration: underline;
   text-align: center;
 }
+
+/* Navigation Component */
+
+.navLink__text {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.8rem;
+}
