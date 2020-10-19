@@ -21,7 +21,6 @@ function App() {
   }, []);
 
   const onRefreshUser = () => {
-    console.log("refreshed");
     setUserObj(getCompressedUser(authService.currentUser));
   };
 

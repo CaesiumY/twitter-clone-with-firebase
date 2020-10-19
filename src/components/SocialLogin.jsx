@@ -16,8 +16,7 @@ const SocialLogin = ({ provider }) => {
       } else {
         alert(`Wrong ${provider} provider!`);
       }
-      const data = await authService.signInWithPopup(provider);
-      console.log("onSocialLogin -> data", data);
+      await authService.signInWithPopup(provider);
     } catch (error) {
       alert(error.message);
     }

@@ -19,7 +19,6 @@ const AuthForm = () => {
       } else {
         data = await authService.signInWithEmailAndPassword(email, password);
       }
-      console.log("onSubmit -> data", data);
     } catch (error) {
       setError(error.message);
     }
