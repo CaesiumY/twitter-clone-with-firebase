@@ -15,8 +15,8 @@ const TweetForm = ({ userObj }) => {
   };
 
   const onSubmit = async (e) => {
-    if (tweet === "") return;
     e.preventDefault();
+    if (tweet === "") return;
     let attachmentUrl = "";
 
     if (attachment) {
@@ -90,7 +90,7 @@ const TweetForm = ({ userObj }) => {
               style={{ backgroundImage: attachment }}
               alt={tweet}
             />
-            <div className="tweetInput__clear" onClick={onClearAttachment}>
+            <div className="tweetForm__clear" onClick={onClearAttachment}>
               <span>Remove</span>
               <FontAwesomeIcon icon={faTimes} />
             </div>

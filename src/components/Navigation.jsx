@@ -20,7 +20,7 @@ const Navigation = ({ userObj }) => {
             }}
           >
             <FontAwesomeIcon icon={faTwitter} color={"#04aaff"} size="2x" />
-            <span style={{ marginTop: 10 }}>Profile</span>
+            <span style={{ marginTop: 10 }}>Home</span>
           </Link>
         </li>
         <li>

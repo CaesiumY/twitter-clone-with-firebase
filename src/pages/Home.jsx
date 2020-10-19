@@ -23,7 +23,7 @@ const Home = ({ userObj }) => {
   return (
     <div className="container">
       <TweetForm userObj={userObj}></TweetForm>
-      <div style={{ marginTop: 30 }}>
+      <div style={{ marginTop: 10 }}>
         {tweets.map((tweetObj) => (
           <Tweet
             key={tweetObj.id}

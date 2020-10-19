@@ -111,7 +111,7 @@ form {
   border: 1px solid #04aaff;
   border-radius: 20px;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 1rem;
 }
 
 .tweetInput__arrow {
@@ -124,16 +124,19 @@ form {
   text-align: center;
   border-radius: 20px;
   color: white;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .tweetInput__label {
+  font-size: 1rem;
   color: #04aaff;
   cursor: pointer;
 }
 
 .tweetInput__label span {
   margin-right: 10px;
-  font-size: 12px;
+  font-size: 1rem;
 }
 
 .tweetForm__attachment {
@@ -149,14 +152,15 @@ form {
 }
 
 .tweetForm__clear {
+  margin: 10px;
   color: #04aaff;
   cursor: pointer;
   text-align: center;
 }
 
 .tweetForm__clear span {
-  margin-right: 10px;
-  font-size: 12px;
+  margin: 10px;
+  font-size: 1.1rem;
 }
 
 /* tweet */
@@ -168,7 +172,7 @@ form {
 }
 
 .tweet {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   background-color: white;
   width: 100%;
   max-width: 400px;
@@ -181,7 +185,7 @@ form {
 }
 
 .tweet h4 {
-  font-size: 14px;
+  font-size: 1rem;
 }
 
 .tweet img {
@@ -192,6 +196,7 @@ form {
   width: 50px;
   height: 50px;
   margin-top: 10px;
+  z-index: 1;
 }
 
 .tweet__actions {
