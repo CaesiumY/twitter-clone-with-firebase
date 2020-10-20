@@ -12,6 +12,26 @@ Clone Twitter with React & Firebase
 
 ## 📷Screenshots
 
+<details>
+  <summary>Auth Page</summary>
+  <img src="./screenshots/auth.png" width="720">
+</details>
+
+<details>
+  <summary>Home Page</summary>
+  <img src="./screenshots/home.png" width="720">
+</details>
+
+<details>
+  <summary>Profile Page</summary>
+  <img src="./screenshots/profile.png" width="720">
+</details>
+<details>
+
+  <summary>404 Page</summary>
+  <img src="./screenshots/404.png" width="720">
+</details>
+
 ## 🔰How to start
 
 ### Install
